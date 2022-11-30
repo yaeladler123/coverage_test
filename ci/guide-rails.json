@@ -51,25 +51,25 @@
 							{
 								"name": "Get Dependencies",
 								"definition": "Get Dependencies",
-								"command": "go get -t -d ./...",
-								"properties": null
-							},
-							{
-								"name": "Unit Tests",
-								"definition": "Unit Tests",
-								"command": "set -o pipefail\nginkgo -cover -r -v --skip-package=pb,test,mock,proto --output-dir=./ | tee ginkgo.output",
-								"properties": null
-							},
-							{
-								"name": "Convert coverage",
-								"definition": "Convert coverage",
-								"command": "cat ginkgo.output 2\u003e\u00261 | go-junit-report \u003e test.xml\ngocov convert *.coverprofile | gocov-xml \u003e coverage.xml",
+								"command": "go get -t -d ./...\n\ngo install github.com/jstemmer/go-junit-report@latest\ncp \"${GOPATH}/bin/go-junit-report\" .",
 								"properties": null
 							},
 							{
 								"name": "Build",
 								"definition": "Build",
 								"command": "go build -o ((application.name))",
+								"properties": null
+							},
+							{
+								"name": "Unit Tests",
+								"definition": "Unit Tests",
+								"command": "set -o pipefail\nginkgo -cover -r --skip-package=pb,test,mock,proto,testdata | tee ginkgo.output",
+								"properties": null
+							},
+							{
+								"name": "Convert coverage",
+								"definition": "Convert coverage",
+								"command": "[ -f ginkgo.output ] \u0026\u0026 cat ginkgo.output 2\u003e\u00261 | go-junit-report \u003e test.xml\n[ -f coverprofile.out ] \u0026\u0026 gocov convert coverprofile.out | gocov-xml \u003e coverage.xml",
 								"properties": null
 							},
 							{
