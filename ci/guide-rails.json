@@ -101,7 +101,7 @@
 		],
 		"deployment_files": [
 			{
-				"source_path": "ci/bin/start_service.sh",
+				"source_path": "ci/start_service.sh",
 				"target_path": "bin/start_service.sh"
 			}
 		],
