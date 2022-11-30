@@ -51,7 +51,7 @@
 							{
 								"name": "Get Dependencies",
 								"definition": "Get Dependencies",
-								"command": "go get -t -d ./...\n\ngo install github.com/jstemmer/go-junit-report@latest\ncp \"${GOPATH}/bin/go-junit-report\" .",
+								"command": "go version\nset +e\n\ngo install github.com/jstemmer/go-junit-report@latest\ncp \"${GOPATH}/bin/go-junit-report\" .",
 								"properties": null
 							},
 							{
