@@ -57,7 +57,19 @@
 							{
 								"name": "Build",
 								"definition": "Build",
-								"command": "go build -o ((application.name))",
+								"command": "CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -tags netgo -ldflags '-w -extldflags \"-static\"' -o ((application.name))",
+								"properties": null
+							},
+							{
+								"name": "Build Instrumented",
+								"definition": "Build Instrumented",
+								"command": "CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go test -a -tags netgo -ldflags '-w -extldflags \"-static\"' -c -coverpkg=all -covermode=count -o ((application.name))-instrumented",
+								"properties": null
+							},
+							{
+								"name": "GetTools",
+								"definition": "GetTools",
+								"command": "go get github.com/axw/gocov/gocov\ngo get github.com/AlekSi/gocov-xml\ngo get -u github.com/jstemmer/go-junit-report\ncp ${GOPATH}/bin/gocov* ${GOPATH}/bin/go-junit-report .",
 								"properties": null
 							},
 							{
@@ -70,18 +82,6 @@
 								"name": "Convert coverage",
 								"definition": "Convert coverage",
 								"command": "[ -f ginkgo.output ] \u0026\u0026 cat ginkgo.output 2\u003e\u00261 | go-junit-report \u003e test.xml\n[ -f coverprofile.out ] \u0026\u0026 gocov convert coverprofile.out | gocov-xml \u003e coverage.xml",
-								"properties": null
-							},
-							{
-								"name": "GetTools",
-								"definition": "GetTools",
-								"command": "go get github.com/axw/gocov/gocov\ngo get github.com/AlekSi/gocov-xml\ngo get -u github.com/jstemmer/go-junit-report\ncp ${GOPATH}/bin/gocov* ${GOPATH}/bin/go-junit-report .",
-								"properties": null
-							},
-							{
-								"name": "Build Instrumented",
-								"definition": "Build Instrumented",
-								"command": "go test -c -coverpkg=all -covermode=count -o ((application.name))-instrumented",
 								"properties": null
 							}
 						],
