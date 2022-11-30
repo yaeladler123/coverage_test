@@ -51,19 +51,19 @@
 							{
 								"name": "Get Dependencies",
 								"definition": "Get Dependencies",
-								"command": "go version\nset +e\n\ngo install github.com/jstemmer/go-junit-report@latest\ncp \"${GOPATH}/bin/go-junit-report\" .",
+								"command": "go get -t -d ./...\n",
+								"properties": null
+							},
+							{
+								"name": "Unit tests and coverage",
+								"definition": "Unit tests and coverage",
+								"command": "set -o pipefail\nginkgo -cover -r --skip-package=pb,test,mock,proto,testdata | tee ginkgo.output\ncat ginkgo.output 2\u003e\u00261 | go-junit-report \u003e test.xml\ngocov convert coverprofile.out | gocov-xml \u003e coverage.xml",
 								"properties": null
 							},
 							{
 								"name": "Build",
 								"definition": "Build",
-								"command": "CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -tags netgo -ldflags '-w -extldflags \"-static\"' -o ((application.name))",
-								"properties": null
-							},
-							{
-								"name": "Build Instrumented",
-								"definition": "Build Instrumented",
-								"command": "CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go test -a -tags netgo -ldflags '-w -extldflags \"-static\"' -c -coverpkg=all -covermode=count -o ((application.name))-instrumented",
+								"command": "go build -o ((application.name))",
 								"properties": null
 							},
 							{
@@ -73,15 +73,9 @@
 								"properties": null
 							},
 							{
-								"name": "Unit Tests",
-								"definition": "Unit Tests",
-								"command": "set -o pipefail\nginkgo -cover -r --skip-package=pb,test,mock,proto,testdata | tee ginkgo.output",
-								"properties": null
-							},
-							{
-								"name": "Convert coverage",
-								"definition": "Convert coverage",
-								"command": "[ -f ginkgo.output ] \u0026\u0026 cat ginkgo.output 2\u003e\u00261 | go-junit-report \u003e test.xml\n[ -f coverprofile.out ] \u0026\u0026 gocov convert coverprofile.out | gocov-xml \u003e coverage.xml",
+								"name": "Build Instrumented",
+								"definition": "Build Instrumented",
+								"command": "go test -c -coverpkg=all -covermode=count -o ((application.name))-instrumented",
 								"properties": null
 							}
 						],
