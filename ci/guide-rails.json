@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"version": 1
+		"version": 2
 	},
 	"application": {
 		"name": "ScottCoverageTest",
@@ -73,6 +73,12 @@
 								"properties": null
 							},
 							{
+								"name": "GetTools",
+								"definition": "GetTools",
+								"command": "go get github.com/axw/gocov/gocov\ngo get github.com/AlekSi/gocov-xml\ngo get -u github.com/jstemmer/go-junit-report\ncp ${GOPATH}/bin/gocov* ${GOPATH}/bin/go-junit-report .",
+								"properties": null
+							},
+							{
 								"name": "Build Instrumented",
 								"definition": "Build Instrumented",
 								"command": "go test -c -coverpkg=all -covermode=count -o ((application.name))-instrumented",
@@ -87,13 +93,7 @@
 		"exit_actions": {},
 		"default_properties": [],
 		"deployment_files": [],
-		"application_init": {},
-		"releases": [
-			{
-				"name": "consul",
-				"version": "latest"
-			}
-		]
+		"application_init": {}
 	},
 	"organization": {
 		"orgname": "Playground"
