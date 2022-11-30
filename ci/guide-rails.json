@@ -92,7 +92,13 @@
 				}
 			}
 		},
-		"default_properties": [],
+		"default_properties": [
+			{
+				"name": "GO111MODULE",
+				"value": "auto",
+				"type": "string"
+			}
+		],
 		"deployment_files": [],
 		"application_init": {}
 	},
