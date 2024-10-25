@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: target-group
+
+name: test bego
+
+description: dddddd
+
+conditions:
+  allOf:
+    - property:
+        name: rox.app_release
+        operator: semver-eq
+        operands:
+            - "22"

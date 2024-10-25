@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: flag
+
+flag: Claire test 1
+flagType: boolean
+description: Claire test flag U5
+labels:
+
+availableValues:
+
+isPermanent: false

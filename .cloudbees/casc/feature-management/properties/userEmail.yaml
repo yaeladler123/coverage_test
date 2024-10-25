@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: flag-properties
+
+name: userEmail
+type: String
+description: "userEmail description"

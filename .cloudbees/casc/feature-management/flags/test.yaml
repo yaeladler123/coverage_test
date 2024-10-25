@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: flag
+
+flag: test
+flagType: boolean
+description: test descripti
+labels:
+
+availableValues:
+
+isPermanent: false

@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: target-group
+
+name: Alex target
+
+description: 
+
+conditions:
+  allOf:
+    - property:
+        name: rox.platform
+        operator: is-undefined

@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: flag-properties
+
+name: orgId
+type: String
+description: "orgId description"

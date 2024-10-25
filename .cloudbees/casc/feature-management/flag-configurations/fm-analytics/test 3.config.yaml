@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: flag-configuration
+
+flag: test 3
+
+enabled: false
+
+defaultValue: true
+
+conditions:
+  []

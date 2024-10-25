@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: flag-configuration
+
+flag: lkNumber
+
+enabled: false
+
+defaultValue: - percentage: 33
+  option: 1
+- percentage: 33
+  option: 2
+- percentage: 34
+  option: 3
+
+conditions:
+  []
