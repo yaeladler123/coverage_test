@@ -4,7 +4,7 @@ kind: flag
 
 flag: Claire test 1
 flagType: boolean
-description: Claire test flag U6
+description: Claire test flag U7
 labels:
 
 availableValues:
