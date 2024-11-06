@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: flag
+
+flag: defaultflagAtestingAuditLog
+flagType: string
+description: just for test
+labels:
+  - label1
+
+availableValues:
+
+isPermanent: false
