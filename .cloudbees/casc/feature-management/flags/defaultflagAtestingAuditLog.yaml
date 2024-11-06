@@ -9,5 +9,7 @@ labels:
   - label1
 
 availableValues:
+  - true
+  - false
 
 isPermanent: false
