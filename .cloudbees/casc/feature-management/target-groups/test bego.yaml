@@ -8,8 +8,6 @@ description: dddddd
 
 conditions:
   allOf:
-    - property:
-        name: rox.app_release
-        operator: semver-eq
-        operands:
-            - "22"
+    - anyOf:
+        - group:
+            name: tg1
