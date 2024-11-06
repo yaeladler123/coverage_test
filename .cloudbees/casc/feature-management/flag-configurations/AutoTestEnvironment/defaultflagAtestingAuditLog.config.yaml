@@ -4,7 +4,7 @@ kind: flag-configuration
 
 flag: defaultflagAtestingAuditLog
 
-enabled: false
+enabled: true
 
 defaultValue: valueWrittenInCode: true
 
