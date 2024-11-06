@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: flag-configuration
+
+flag: defaultflagAtestingAuditLog
+
+enabled: false
+
+defaultValue: valueWrittenInCode: true
+
+conditions:
+  - allOf:
+      - anyOf:
+          - group:
+              name: test bego
+    flagValue:
+      valueWrittenInCode: true
