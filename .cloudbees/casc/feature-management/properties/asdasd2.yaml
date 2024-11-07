@@ -2,6 +2,6 @@
 apiVersion: v1
 kind: flag-properties
 
-name: IsLoggedIn
+name: asdasd2
 type: Boolean
-description: "logged in"
+description: ""

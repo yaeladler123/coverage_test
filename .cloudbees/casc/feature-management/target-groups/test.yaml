@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: target-group
 
-name: test bego
+name: test
 
-description: dddddd
+description: asd 123
 
 conditions:
   allOf:
     - anyOf:
         - group:
-            name: tg1
+            name: parent

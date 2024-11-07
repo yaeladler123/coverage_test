@@ -1,7 +1,0 @@
----
-apiVersion: v1
-kind: flag-properties
-
-name: claire prop
-type: Boolean
-description: "Claire custom test prop 1"

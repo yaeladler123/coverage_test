@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: target-group
+
+name: parent
+
+description: 
+
+conditions:
+  allOf:
+    - property:
+        name: rox.distinct_id
+        operator: in-array
+        operands:
+            - "1"
+            - "2"
