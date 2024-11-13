@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: flag-configuration
+
+flag: defaultflagAtestingAuditLog
+
+enabled: true
+
+defaultValue: - percentage: 52
+  option: "true"
+- percentage: 48
+  option: "false"
+
+conditions:
+  []
