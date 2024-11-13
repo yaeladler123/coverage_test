@@ -4,11 +4,11 @@ kind: flag-configuration
 
 flag: defaultflagAtestingAuditLog
 
-enabled: false
+enabled: true
 
-defaultValue: - percentage: 52
+defaultValue: - percentage: 53
   option: "true"
-- percentage: 48
+- percentage: 47
   option: "false"
 
 conditions:
