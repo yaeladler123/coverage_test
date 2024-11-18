@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: target-group
+
+name: manual-tg13
+
+description: tg2 desc
+
+conditions:
+  anyOf: []
